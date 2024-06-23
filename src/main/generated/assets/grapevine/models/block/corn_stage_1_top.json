@@ -1,0 +1,6 @@
+{
+  "parent": "grapevine:block/parent/cross_crop",
+  "textures": {
+    "cross_crop": "grapevine:block/corn_stage_1_top"
+  }
+}

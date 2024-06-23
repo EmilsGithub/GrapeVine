@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "grapevine:block/frying_pan"
+    },
+    "facing=east": {
+      "model": "grapevine:block/frying_pan",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "grapevine:block/frying_pan",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "grapevine:block/frying_pan",
+      "y": 270
+    }
+  }
+}

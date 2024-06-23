@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "grapevine:bean_sprout"
+    }
+  ],
+  "result": {
+    "item": "grapevine:bean_sprout_seeds"
+  }
+}

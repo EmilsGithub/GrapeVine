@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "grapevine:spinach"
+    }
+  ],
+  "result": {
+    "item": "grapevine:spinach_seeds"
+  }
+}

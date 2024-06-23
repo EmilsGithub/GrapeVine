@@ -1,0 +1,11 @@
+{
+  "type": "grapevine:frying",
+  "ingredients": [
+    {
+      "item": "minecraft:stone"
+    }
+  ],
+  "result": {
+    "item": "minecraft:oak_planks"
+  }
+}

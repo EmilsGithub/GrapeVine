@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "grapevine:block/long_beans_stage_2"
+  }
+}

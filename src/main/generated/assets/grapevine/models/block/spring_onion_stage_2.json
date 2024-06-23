@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "grapevine:block/spring_onion_stage_2"
+  }
+}

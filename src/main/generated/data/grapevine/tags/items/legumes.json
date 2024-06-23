@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "grapevine:soy_bean",
+    "grapevine:peas",
+    "grapevine:peanut",
+    "grapevine:long_beans"
+  ]
+}
