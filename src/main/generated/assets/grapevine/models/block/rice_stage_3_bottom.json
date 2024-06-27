@@ -1,6 +1,0 @@
-{
-  "parent": "grapevine:block/parent/cross_crop",
-  "textures": {
-    "cross_crop": "grapevine:block/rice_stage_3_bottom"
-  }
-}

@@ -21,12 +21,18 @@ public class ModItemGroups {
                         entries.add(ModRegistries.BUTCHER_KNIFE);
 
                         entries.add(ModRegistries.FRYING_PAN);
+                        entries.add(ModRegistries.COOKING_POT);
+
+                        entries.add(ModRegistries.TRELLIS_FRAME);
 
                         ModRegistries.getAllCrops().values().forEach(cropFamily -> {
                             if(cropFamily.getCropItem() != null) entries.add(new ItemStack(cropFamily.getCropItem()));
                         });
                         ModRegistries.getAllCrops().values().forEach(cropFamily -> {
                             if(cropFamily.getHasSeeds() && cropFamily.getSeedsItem() != null) entries.add(new ItemStack(cropFamily.getSeedsItem()));
+                        });
+                        ModRegistries.getAllCrops().values().forEach(cropFamily -> {
+                            if(cropFamily.shouldAddCropBlockToGroup()) entries.add(new ItemStack(cropFamily.getCropBlock()));
                         });
 
                     }).build());

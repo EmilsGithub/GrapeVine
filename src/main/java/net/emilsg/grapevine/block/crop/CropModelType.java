@@ -6,7 +6,9 @@ public enum CropModelType implements StringIdentifiable {
     CROP ("crop"),
     CROSS ("cross"),
     TALL_CROP ("tall_crop"),
-    TALL_CROSS ("tall_cross");
+    TALL_CROSS ("tall_cross"),
+    WATERLOGGED_TALL_CROSS ("tall_cross"),
+    TRELLIS("trellis");
 
     private final String name;
 

@@ -5,6 +5,8 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.emilsg.grapevine.GrapeVine;
 import net.emilsg.grapevine.block.crop.AgeCropBlock;
 import net.emilsg.grapevine.block.crop.CropModelType;
+import net.emilsg.grapevine.block.crop.TrellisCropBlock;
+import net.emilsg.grapevine.block.crop.TrellisCropBlock4;
 import net.emilsg.grapevine.register.ModRegistries;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -14,12 +16,17 @@ import net.minecraft.item.Item;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 
 import java.util.Optional;
 
 public class ModelDataGen extends FabricModelProvider {
     public static final TextureKey CROP = TextureKey.of("cross_crop");
     public static final Model CROSS_CROP = block("cross_crop", CROP);
+
+    public static final TextureKey INNER = TextureKey.of("inner");
+    public static final TextureKey OUTER = TextureKey.of("outer");
+    public static final Model CROP_TRELLIS = block("crop_trellis", INNER, OUTER);
 
 
     public ModelDataGen(FabricDataOutput output) {
@@ -34,6 +41,9 @@ public class ModelDataGen extends FabricModelProvider {
                 registerDynamicCrop(generator, cropFamily.getCropBlock(), ageProperty, cropFamily.getCropModelType());
             }
         });
+
+        TrellisCropBlock4 grapeBlock = (TrellisCropBlock4) ModRegistries.getAllCrops().get("grapes").getCropBlock();
+        registerTrellisCrop(generator, grapeBlock, Properties.AGE_4);
     }
 
     @Override
@@ -131,12 +141,31 @@ public class ModelDataGen extends FabricModelProvider {
         generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(crop).coordinate(blockStateVariantMap));
     }
 
+    private void registerTrellisCrop(BlockStateModelGenerator generator, TrellisCropBlock trellisBlock, IntProperty ageProperty) {
+        Int2ObjectMap<Identifier> int2ObjectMap = new Int2ObjectOpenHashMap<>();
+        BlockStateVariantMap blockStateVariantMap = BlockStateVariantMap.create(ageProperty, Properties.HORIZONTAL_FACING).register((age, facing) -> {
+            Identifier identifier = int2ObjectMap.computeIfAbsent(age, (i) -> {
+                return generator.createSubModel(trellisBlock, "_stage_" + i, CROP_TRELLIS, ModelDataGen::cropTrellis);
+            });
+            return BlockStateVariant.create()
+                    .put(VariantSettings.MODEL, identifier)
+                    .put(VariantSettings.Y, facing == Direction.NORTH ? VariantSettings.Rotation.R0 : facing == Direction.EAST ? VariantSettings.Rotation.R90 : facing == Direction.SOUTH ? VariantSettings.Rotation.R180 : VariantSettings.Rotation.R270);  // Add Y rotation based on facing direction
+        });
+        generator.blockStateCollector.accept(VariantsBlockStateSupplier.create(trellisBlock).coordinate(blockStateVariantMap));
+    }
+
     private static Model block(String parent, TextureKey ... requiredTextureKeys) {
         return new Model(Optional.of(new Identifier(GrapeVine.MOD_ID, "block/parent/" + parent)), Optional.empty(), requiredTextureKeys);
     }
 
     public static TextureMap crossCrop(Identifier cropID) {
         return new TextureMap().put(CROP, cropID);
+    }
+
+    private static TextureMap cropTrellis(Identifier trellisBlockID) {
+        Identifier inner = new Identifier(GrapeVine.MOD_ID, trellisBlockID.getPath() + "_inner");
+        Identifier outer = new Identifier(GrapeVine.MOD_ID, trellisBlockID.getPath() + "_outer");
+        return new TextureMap().put(INNER, inner).put(OUTER, outer);
     }
 
 }

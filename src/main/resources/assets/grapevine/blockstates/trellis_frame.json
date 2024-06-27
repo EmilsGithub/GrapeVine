@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "grapevine:block/parent/crop_trellis",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "grapevine:block/parent/crop_trellis",
+      "y": 0
+    },
+    "facing=south": {
+      "model": "grapevine:block/parent/crop_trellis",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "grapevine:block/parent/crop_trellis",
+      "y": 270
+    }
+  }
+}

@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "grapevine:grapes_seeds"
+        "recipe": "grapevine:grape_seeds"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "grapevine:grapes_seeds"
+      "grapevine:grape_seeds"
     ]
   },
   "sends_telemetry_event": false

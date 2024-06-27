@@ -16,8 +16,9 @@ public class CropFamily {
     private final boolean hasSeeds;
     private final CropModelType cropModelType;
     private final CropType cropType;
+    private final boolean addCropBlockToGroup;
 
-    public CropFamily(String name, @Nullable Item seedsItem, Item cropItem, Block cropBlock, int maxAge, boolean hasSpecialDrops, boolean hasSeeds, CropModelType cropModelType, @Nullable CropType cropType) {
+    public CropFamily(String name, @Nullable Item seedsItem, Item cropItem, Block cropBlock, int maxAge, boolean hasSpecialDrops, boolean hasSeeds, CropModelType cropModelType, @Nullable CropType cropType, boolean addCropBlockToGroup) {
         this.name = name;
         this.seedsItem = seedsItem;
         this.cropItem = cropItem;
@@ -27,6 +28,7 @@ public class CropFamily {
         this.hasSeeds = hasSeeds;
         this.cropModelType = cropModelType;
         this.cropType = cropType;
+        this.addCropBlockToGroup = addCropBlockToGroup;
     }
 
     public String getName() {
@@ -63,5 +65,9 @@ public class CropFamily {
 
     public CropType getCropType() {
         return cropType;
+    }
+
+    public boolean shouldAddCropBlockToGroup() {
+        return addCropBlockToGroup;
     }
 }

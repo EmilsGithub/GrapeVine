@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "grapevine:item/grapes_seeds"
+    "layer0": "grapevine:item/grape_seeds"
   }
 }

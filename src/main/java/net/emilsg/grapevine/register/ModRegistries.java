@@ -30,66 +30,94 @@ public class ModRegistries {
     private static final FabricBlockSettings BASE_CROP_YELLOW = BASE_CROP_GREEN.mapColor(MapColor.PALE_YELLOW);
     private static final FabricBlockSettings BASE_CROP_BROWN = BASE_CROP_GREEN.mapColor(MapColor.BROWN);
 
+    private static final FabricBlockSettings BASE_TRELLIS_BROWN = FabricBlockSettings.create().ticksRandomly().sounds(BlockSoundGroup.VINE).pistonBehavior(PistonBehavior.DESTROY).mapColor(MapColor.BROWN);
 
     private static final Map<String, CropFamily> cropFamilies = new HashMap<>();
-
-    public static void initRegistriesAndCrops() {
-        registerCropFamily("grapes", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, CropType.FRUITS);
-        registerCropFamily("lettuce", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, CropType.LEAFY_GREENS);
-        registerCropFamily("cabbage", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, CropType.LEAFY_GREENS);
-        registerCropFamily("corn", CropEnumType.TALL_CROSS_3, BASE_CROP_GREEN, false, true, CropType.GRAINS);
-        registerCropFamily("garlic", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, CropType.BULBS);
-        registerCropFamily("onion", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, CropType.BULBS);
-        registerCropFamily("rice", CropEnumType.WATERLOGGED_TALL_CROSS_4, BASE_CROP_GREEN, false, true, CropType.GRAINS);
-        registerCropFamily("chili", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, null);
-        registerCropFamily("bell_pepper", CropEnumType.CROP_4, BASE_CROP_GREEN, false, true, null);
-        registerCropFamily("tomato", CropEnumType.TALL_CROP_4, BASE_CROP_GREEN, false, true, null);
-        registerCropFamily("eggplant", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, null);
-        registerCropFamily("long_beans", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, CropType.LEGUMES);
-        registerCropFamily("peanut", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, CropType.LEGUMES);
-        registerCropFamily("basil", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, CropType.HERBS);
-        registerCropFamily("mint", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, CropType.HERBS);
-        registerCropFamily("peas", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, CropType.LEGUMES);
-        registerCropFamily("bean_sprout", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, null);
-        registerCropFamily("spring_onion", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, CropType.BULBS);
-        registerCropFamily("sweet_potato", CropEnumType.CROP_3, BASE_CROP_GREEN, false, false, CropType.TUBERS);
-        registerCropFamily("spinach", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, CropType.LEAFY_GREENS);
-        registerCropFamily("mustard", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, null);
-        registerCropFamily("soy_bean", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, CropType.LEGUMES);
-        registerCropFamily("ginger", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, null);
-        registerCropFamily("pepper", CropEnumType.CROP_3, BASE_CROP_GREEN, false, true, null);
-    }
 
     public static final Item KNIFE = registerItem("knife", new Item(new FabricItemSettings()));
     public static final Item BUTCHER_KNIFE = registerItem("butcher_knife", new Item(new FabricItemSettings()));
 
     public static final Block FRYING_PAN = registerBlock("frying_pan", new FryingPanBlock(FabricBlockSettings.copy(Blocks.IRON_BLOCK).breakInstantly()));
     public static final Block COOKING_POT = registerBlock("cooking_pot", new CookingPotBlock(FabricBlockSettings.copy(Blocks.IRON_BLOCK).breakInstantly()));
+    public static final Block TRELLIS_FRAME = registerBlock("trellis_frame", new TrellisFrameBlock(FabricBlockSettings.copy(Blocks.OAK_PLANKS)));
 
-     /**
+    public static void initRegistriesAndCrops() {
+        registerCrop("lettuce", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, CropType.LEAFY_GREENS);
+        registerCrop("cabbage", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, CropType.LEAFY_GREENS);
+        registerCrop("corn", 3, CropModelType.TALL_CROSS, BASE_CROP_GREEN, false, true, CropType.GRAINS);
+        registerCrop("garlic", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, CropType.BULBS);
+        registerCrop("onion", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, CropType.BULBS);
+        registerCrop("rice", 4, CropModelType.WATERLOGGED_TALL_CROSS, BASE_CROP_GREEN, false, true, CropType.GRAINS);
+        registerCrop("chili", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, null);
+        registerCrop("bell_pepper", 4, CropModelType.CROP, BASE_CROP_GREEN, false, true, null);
+        registerCrop("tomato", 4, CropModelType.TALL_CROP, BASE_CROP_GREEN, false, true, null);
+        registerCrop("eggplant", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, null);
+        registerCrop("long_beans", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, CropType.LEGUMES);
+        registerCrop("peanut", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, CropType.LEGUMES);
+        registerCrop("basil", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, CropType.HERBS);
+        registerCrop("mint", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, CropType.HERBS);
+        registerCrop("peas", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, CropType.LEGUMES);
+        registerCrop("bean_sprout", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, null);
+        registerCrop("spring_onion", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, CropType.BULBS);
+        registerCrop("sweet_potato", 3, CropModelType.CROP, BASE_CROP_GREEN, false, false, CropType.TUBERS);
+        registerCrop("spinach", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, CropType.LEAFY_GREENS);
+        registerCrop("mustard", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, null);
+        registerCrop("soy_bean", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, CropType.LEGUMES);
+        registerCrop("ginger", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, null);
+        registerCrop("pepper", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, null);
+
+        registerTrellisCrop("grapes", 4, BASE_TRELLIS_BROWN, true, CropType.FRUITS);
+    }
+
+    /**
      Helper Methods
      **/
 
-     public static void registerCropFamily(String name, CropEnumType cropEnumType, FabricBlockSettings blockSettings, boolean hasSpecialDrops, boolean hasSeeds, @Nullable CropType cropType) {
-         AgeCropBlock ageCropBlock;
-         CropModelType cropModelType = cropEnumType.getCropModelType();
-         int maxAge = cropEnumType.getTypeNumber();
+    private static void registerTrellisCrop(String name, int maxAge, FabricBlockSettings defaultBlockSetting, boolean shouldMakeSeeds, CropType cropType) {
+        Block cropBlock;
+        Item seedsItem = null;
+        Item cropItem;
+
+        String seedName = name.endsWith("s") ? name.substring(0, name.length() - 1) : name;
+
+        if(shouldMakeSeeds) seedsItem = registerItem(seedName + "_seeds", new Item(new FabricItemSettings()));
+        cropItem = registerItem(name, new Item(RAW_EDIBLE_CROP_DEFAULT));
+
+        cropBlock = switch (maxAge) {
+            default -> new TrellisCropBlock4(defaultBlockSetting, cropItem, seedsItem);
+        };
+
+        cropBlock = registerBlock(seedName + "_trellis", cropBlock);
+
+        cropFamilies.put(name, new CropFamily(name, seedsItem, cropItem, cropBlock, maxAge, true, shouldMakeSeeds, CropModelType.TRELLIS, cropType, true));
+    }
+
+     public static void registerCrop(String name, int maxAge, CropModelType cropModelType, FabricBlockSettings blockSettings, boolean hasSpecialDrops, boolean hasSeeds, @Nullable CropType cropType) {
+         Block cropBlock;
          Item seedsItem = null;
          Item cropItem;
 
-         ageCropBlock = switch (cropEnumType) {
-             case CROP_3, CROSS_3 -> new AgeCropBlock3(blockSettings);
-             case CROP_4, CROSS_4 -> new AgeCropBlock4(blockSettings);
-             case CROP_5, CROSS_5 -> new AgeCropBlock5(blockSettings);
-
-             case TALL_CROP_3, TALL_CROSS_3 -> new DoubleTallAgeCropBlock3(blockSettings);
-             case TALL_CROP_4, TALL_CROSS_4 -> new DoubleTallAgeCropBlock4(blockSettings);
-             case TALL_CROP_5, TALL_CROSS_5 -> new DoubleTallAgeCropBlock5(blockSettings);
-
-             case WATERLOGGED_TALL_CROSS_4 -> new WaterloggedDoubleTallAgeCropBlock4(blockSettings);
+         cropBlock = switch (maxAge) {
+             case 3 -> switch (cropModelType) {
+                 case CROP, CROSS -> new AgeCropBlock3(blockSettings);
+                 case TALL_CROP, TALL_CROSS -> new DoubleTallAgeCropBlock3(blockSettings);
+                 default -> null;
+             };
+             case 4 -> switch (cropModelType) {
+                 case CROP, CROSS -> new AgeCropBlock4(blockSettings);
+                 case TALL_CROP, TALL_CROSS -> new DoubleTallAgeCropBlock4(blockSettings);
+                 case WATERLOGGED_TALL_CROSS -> new WaterloggedDoubleTallAgeCropBlock4(blockSettings);
+                 default -> null;
+             };
+             case 5 -> switch (cropModelType) {
+                 case CROP, CROSS -> new AgeCropBlock5(blockSettings);
+                 case TALL_CROP, TALL_CROSS -> new DoubleTallAgeCropBlock5(blockSettings);
+                 default -> null;
+             };
+             default -> null;
          };
 
-         Block cropBlock = registerBlockWithoutItem(name, ageCropBlock);
+         cropBlock = registerBlockWithoutItem(name, cropBlock);
 
          if(hasSeeds) {
              seedsItem = registerItem(name + "_seeds", new SeedsItem(new FabricItemSettings(), cropBlock));
@@ -98,7 +126,7 @@ public class ModRegistries {
              cropItem = registerItem(name, new SeedsItem(RAW_EDIBLE_CROP_DEFAULT, cropBlock));
          }
 
-         cropFamilies.put(name, new CropFamily(name, seedsItem, cropItem, cropBlock, maxAge, hasSpecialDrops, hasSeeds, cropModelType, cropType));
+         cropFamilies.put(name, new CropFamily(name, seedsItem, cropItem, cropBlock, maxAge, hasSpecialDrops, hasSeeds, cropModelType, cropType, false));
      }
 
     public static CropFamily getCropFamily(String name) {

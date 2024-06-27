@@ -14,7 +14,9 @@ public enum CropEnumType {
     TALL_CROP_4(4, CropModelType.TALL_CROP),
     TALL_CROP_5(5, CropModelType.TALL_CROP),
 
-    WATERLOGGED_TALL_CROSS_4(4, CropModelType.TALL_CROSS);
+    WATERLOGGED_TALL_CROSS_4(4, CropModelType.TALL_CROSS),
+
+    TRELLIS_CROP(4, CropModelType.TRELLIS);
 
 
     private final int typeNumber;
