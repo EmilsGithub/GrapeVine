@@ -1,4 +1,4 @@
-// 1.20.1	2024-06-27T22:28:38.1721209	GrapeVine/Block Loot Tables
+// 1.20.1	2024-06-27T22:54:05.6565762	GrapeVine/Block Loot Tables
 5cd6989b3da72ab06ca3687e63b3d357150beb2e data\grapevine\loot_tables\blocks\mustard.json
 afc831ebcd03781c85a17a28bdc9252a9cedb4c7 data\grapevine\loot_tables\blocks\peas.json
 742b997f12b709d95dfb6901539df7c7ab963a83 data\grapevine\loot_tables\blocks\basil.json
@@ -10,9 +10,9 @@ f000fc11be8b01283a6224ce526acb5326e50e28 data\grapevine\loot_tables\blocks\long_
 545a9907a6b9016b0d48061b8041671ad2ed25fb data\grapevine\loot_tables\blocks\garlic.json
 251511dfe977cbb81606f06c60c490a6cd820822 data\grapevine\loot_tables\blocks\tomato.json
 24ae825268c7d6325c53275441d9acb052000e93 data\grapevine\loot_tables\blocks\peanut.json
+174aa53c68bb24ab17792eb4ace96aa4b0c52120 data\grapevine\loot_tables\blocks\sweet_potato.json
 16403a087f1f112571d0b1bfd7aca1e0b4f49738 data\grapevine\loot_tables\blocks\rice.json
 39e9a0e7305838ea6be7bdd97bee336dde49f19c data\grapevine\loot_tables\blocks\mint.json
-174aa53c68bb24ab17792eb4ace96aa4b0c52120 data\grapevine\loot_tables\blocks\sweet_potato.json
 8411b9ffdd6ae060a59e378206ae6afd89d16cf2 data\grapevine\loot_tables\blocks\soy_bean.json
 fae0007e10556d98b2510b5219817d48daf096a8 data\grapevine\loot_tables\blocks\onion.json
 768f7922d813c9c93f6129683870275c203f1721 data\grapevine\loot_tables\blocks\lettuce.json

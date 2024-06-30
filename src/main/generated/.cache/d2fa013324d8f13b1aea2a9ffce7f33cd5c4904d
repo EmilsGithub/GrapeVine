@@ -1,3 +1,4 @@
-// 1.20.1	2024-06-27T22:28:38.165608	GrapeVine/Tags for minecraft:block
+// 1.20.1	2024-06-27T22:54:05.651066	GrapeVine/Tags for minecraft:block
+737c0d16aafb408b1e72ab5b2fe6c4a7e73703ef data\minecraft\tags\blocks\climbable.json
 dd60c223420b86c9711fefddbae9c294d7e06524 data\minecraft\tags\blocks\crops.json
-dd60c223420b86c9711fefddbae9c294d7e06524 data\minecraft\tags\blocks\maintains_farmland.json
+ad4c9137a2c60f6ccd07be06541952a4286129b3 data\minecraft\tags\blocks\maintains_farmland.json

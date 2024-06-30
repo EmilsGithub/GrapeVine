@@ -118,9 +118,10 @@ public class ModRegistries {
          };
 
          cropBlock = registerBlockWithoutItem(name, cropBlock);
+         String seedName = name.endsWith("s") ? name.substring(0, name.length() - 1) : name;
 
          if(hasSeeds) {
-             seedsItem = registerItem(name + "_seeds", new SeedsItem(new FabricItemSettings(), cropBlock));
+             seedsItem = registerItem(seedName + "_seeds", new SeedsItem(new FabricItemSettings(), cropBlock));
              cropItem = registerItem(name, new Item(RAW_EDIBLE_CROP_DEFAULT));
          } else {
              cropItem = registerItem(name, new SeedsItem(RAW_EDIBLE_CROP_DEFAULT, cropBlock));

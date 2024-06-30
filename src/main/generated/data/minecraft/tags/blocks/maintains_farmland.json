@@ -24,6 +24,7 @@
     "grapevine:peanut",
     "grapevine:long_beans",
     "grapevine:eggplant",
-    "grapevine:grape_trellis"
+    "grapevine:grape_trellis",
+    "grapevine:trellis_frame"
   ]
 }

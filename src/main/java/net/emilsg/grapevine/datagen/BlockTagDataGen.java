@@ -3,7 +3,6 @@ package net.emilsg.grapevine.datagen;
 import net.emilsg.grapevine.register.ModRegistries;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.item.ItemStack;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 
@@ -21,5 +20,8 @@ public class BlockTagDataGen extends FabricTagProvider.BlockTagProvider {
             getOrCreateTagBuilder(BlockTags.CROPS).add(cropFamily.getCropBlock());
             getOrCreateTagBuilder(BlockTags.MAINTAINS_FARMLAND).add(cropFamily.getCropBlock());
         });
+
+        getOrCreateTagBuilder(BlockTags.MAINTAINS_FARMLAND).add(ModRegistries.TRELLIS_FRAME);
+        getOrCreateTagBuilder(BlockTags.CLIMBABLE).add(ModRegistries.TRELLIS_FRAME, ModRegistries.getCropFamily("grapes").getCropBlock());
     }
 }
