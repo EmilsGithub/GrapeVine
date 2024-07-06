@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "grapevine:long_beans"
+    }
+  ],
+  "result": {
+    "item": "grapevine:long_bean_seeds"
+  }
+}

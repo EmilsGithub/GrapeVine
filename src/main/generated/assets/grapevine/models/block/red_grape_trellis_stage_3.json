@@ -1,0 +1,7 @@
+{
+  "parent": "grapevine:block/parent/crop_trellis",
+  "textures": {
+    "inner": "grapevine:block/red_grape_trellis_stage_3_inner",
+    "outer": "grapevine:block/red_grape_trellis_stage_3_outer"
+  }
+}

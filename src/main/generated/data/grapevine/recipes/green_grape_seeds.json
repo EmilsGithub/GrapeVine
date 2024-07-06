@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "grapevine:green_grapes"
+    }
+  ],
+  "result": {
+    "item": "grapevine:green_grape_seeds"
+  }
+}
