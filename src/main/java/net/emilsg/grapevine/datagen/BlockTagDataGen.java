@@ -22,6 +22,11 @@ public class BlockTagDataGen extends FabricTagProvider.BlockTagProvider {
         });
 
         getOrCreateTagBuilder(BlockTags.MAINTAINS_FARMLAND).add(ModRegistries.TRELLIS_FRAME);
-        getOrCreateTagBuilder(BlockTags.CLIMBABLE).add(ModRegistries.TRELLIS_FRAME, ModRegistries.getCropFamily("grapes").getCropBlock());
+        getOrCreateTagBuilder(BlockTags.CLIMBABLE).add(
+                ModRegistries.TRELLIS_FRAME,
+                ModRegistries.getCropFamily("red_grapes").getCropBlock(),
+                ModRegistries.getCropFamily("green_grapes").getCropBlock()
+
+        );
     }
 }

@@ -38,7 +38,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "grapevine:long_beans_seeds"
+              "name": "grapevine:long_bean_seeds"
             }
           ]
         }
@@ -70,7 +70,7 @@
               }
             }
           ],
-          "name": "grapevine:long_beans_seeds"
+          "name": "grapevine:long_bean_seeds"
         }
       ],
       "rolls": 1.0

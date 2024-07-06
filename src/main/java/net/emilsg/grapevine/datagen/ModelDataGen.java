@@ -42,8 +42,10 @@ public class ModelDataGen extends FabricModelProvider {
             }
         });
 
-        TrellisCropBlock4 grapeBlock = (TrellisCropBlock4) ModRegistries.getAllCrops().get("grapes").getCropBlock();
-        registerTrellisCrop(generator, grapeBlock, Properties.AGE_4);
+        TrellisCropBlock4 greenGrapes = (TrellisCropBlock4) ModRegistries.getAllCrops().get("green_grapes").getCropBlock();
+        registerTrellisCrop(generator, greenGrapes, Properties.AGE_4);
+        TrellisCropBlock4 redGrapes = (TrellisCropBlock4) ModRegistries.getAllCrops().get("red_grapes").getCropBlock();
+        registerTrellisCrop(generator, redGrapes, Properties.AGE_4);
     }
 
     @Override

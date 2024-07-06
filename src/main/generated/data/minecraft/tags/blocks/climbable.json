@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "grapevine:trellis_frame",
-    "grapevine:grape_trellis"
+    "grapevine:red_grape_trellis",
+    "grapevine:green_grape_trellis"
   ]
 }

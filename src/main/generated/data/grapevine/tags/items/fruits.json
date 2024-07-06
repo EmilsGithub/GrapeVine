@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "grapevine:grapes"
+    "grapevine:red_grapes",
+    "grapevine:green_grapes"
   ]
 }

@@ -38,7 +38,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "grapevine:peas_seeds"
+              "name": "grapevine:pea_seeds"
             }
           ]
         }
@@ -70,7 +70,7 @@
               }
             }
           ],
-          "name": "grapevine:peas_seeds"
+          "name": "grapevine:pea_seeds"
         }
       ],
       "rolls": 1.0

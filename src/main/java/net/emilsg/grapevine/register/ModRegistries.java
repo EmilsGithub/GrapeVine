@@ -66,7 +66,8 @@ public class ModRegistries {
         registerCrop("ginger", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, null);
         registerCrop("pepper", 3, CropModelType.CROP, BASE_CROP_GREEN, false, true, null);
 
-        registerTrellisCrop("grapes", 4, BASE_TRELLIS_BROWN, true, CropType.FRUITS);
+        registerTrellisCrop("green_grapes", 4, BASE_TRELLIS_BROWN, true, CropType.FRUITS);
+        registerTrellisCrop("red_grapes", 4, BASE_TRELLIS_BROWN, true, CropType.FRUITS);
     }
 
     /**
